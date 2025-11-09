@@ -54,12 +54,19 @@ export default {
         'gradient-primary': 'var(--gradient-primary)',
         'gradient-hero': 'var(--gradient-hero)',
         'gradient-overlay': 'var(--gradient-overlay)',
+        'gradient-glass': 'var(--gradient-glass)',
+        'gradient-card': 'var(--gradient-card)',
       },
       boxShadow: {
         'sm': 'var(--shadow-sm)',
         'md': 'var(--shadow-md)',
         'lg': 'var(--shadow-lg)',
+        'xl': 'var(--shadow-xl)',
         'glow': 'var(--shadow-glow)',
+        'glow-accent': 'var(--shadow-glow-accent)',
+      },
+      backdropBlur: {
+        'xs': '2px',
       },
       transitionTimingFunction: {
         'smooth': 'var(--transition-smooth)',

@@ -58,43 +58,50 @@ const Testimonials = () => {
     <div className="min-h-screen bg-background">
       <Header onGetInTouch={() => setContactModalOpen(true)} />
 
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-hero">
-        <div className="container mx-auto">
-          <div className="max-w-3xl mx-auto text-center animate-fade-in-up">
-            <h1 className="text-5xl sm:text-6xl font-bold text-foreground mb-6">Client Testimonials</h1>
-            <p className="text-xl text-muted-foreground">
+      <section className="relative pt-40 pb-28 px-4 sm:px-6 lg:px-8 bg-gradient-hero overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-overlay opacity-50" />
+        <div className="container mx-auto relative z-10">
+          <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
+            <div className="inline-block mb-6 px-6 py-2 rounded-full bg-gradient-glass backdrop-blur-md border border-primary/20 shadow-lg">
+              <span className="text-sm font-semibold bg-gradient-primary bg-clip-text text-transparent">⭐ What Clients Say</span>
+            </div>
+            <h1 className="text-6xl sm:text-7xl font-extrabold text-foreground mb-8">Client Testimonials</h1>
+            <p className="text-xl sm:text-2xl text-muted-foreground leading-relaxed">
               Don't just take our word for it—see what our clients have to say about working with us.
             </p>
           </div>
         </div>
+        <div className="absolute top-20 left-10 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-28 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <Card
                 key={index}
-                className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in"
+                className="group relative overflow-hidden bg-gradient-card hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-border/50 hover:border-primary/30 animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <CardContent className="pt-6">
-                  <div className="flex items-center mb-4">
-                    <Avatar className="h-12 w-12 mr-4">
+                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
+                <CardContent className="pt-8 relative">
+                  <div className="flex items-center mb-6">
+                    <Avatar className="h-16 w-16 mr-4 ring-2 ring-primary/20 group-hover:ring-primary/40 transition-all duration-300">
                       <AvatarImage src={testimonial.avatar} alt={testimonial.name} loading="lazy" />
-                      <AvatarFallback>{testimonial.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                      <AvatarFallback className="bg-primary/10 text-primary font-bold">{testimonial.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                     </Avatar>
                     <div>
-                      <h3 className="font-semibold text-foreground">{testimonial.name}</h3>
+                      <h3 className="font-bold text-lg text-foreground group-hover:text-primary transition-colors duration-300">{testimonial.name}</h3>
                       <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                     </div>
                   </div>
-                  <div className="flex mb-4">
+                  <div className="flex mb-5 gap-1">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 fill-primary text-primary" />
                     ))}
                   </div>
-                  <p className="text-muted-foreground">{testimonial.text}</p>
+                  <p className="text-muted-foreground text-base leading-relaxed">{testimonial.text}</p>
                 </CardContent>
               </Card>
             ))}

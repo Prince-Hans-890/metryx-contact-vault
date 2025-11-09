@@ -64,50 +64,59 @@ const Index = () => {
       <Header onGetInTouch={() => setContactModalOpen(true)} />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6">
+      <section className="relative pt-40 pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-overlay opacity-50" />
+        <div className="container mx-auto relative z-10">
+          <div className="max-w-5xl mx-auto text-center animate-fade-in-up">
+            <div className="inline-block mb-6 px-6 py-2 rounded-full bg-gradient-glass backdrop-blur-md border border-primary/20 shadow-lg">
+              <span className="text-sm font-semibold bg-gradient-primary bg-clip-text text-transparent">🚀 Leading Web Development Agency</span>
+            </div>
+            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-extrabold text-foreground mb-8 leading-tight">
               Transform Your Vision Into
             </h1>
-            <div className="h-20 flex items-center justify-center mb-8">
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+            <div className="h-24 flex items-center justify-center mb-10">
+              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold bg-gradient-primary bg-clip-text text-transparent drop-shadow-lg">
                 {typedText}
                 <span className="animate-pulse">|</span>
               </h2>
             </div>
-            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+            <p className="text-xl sm:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
               We craft stunning, high-performance websites that drive results. From concept to launch, 
               we're your partner in digital excellence.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-5 justify-center">
               <Button
                 size="lg"
+                variant="gradient"
                 onClick={() => setContactModalOpen(true)}
-                className="bg-gradient-primary text-primary-foreground hover:shadow-glow transition-all duration-300 text-lg px-8 py-6"
               >
                 Start Your Project
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button
                 size="lg"
-                variant="outline"
+                variant="glass"
                 asChild
-                className="text-lg px-8 py-6 border-2"
               >
                 <Link to="/projects">View Our Work</Link>
               </Button>
             </div>
           </div>
         </div>
+        {/* Decorative elements */}
+        <div className="absolute top-1/4 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+      <section className="py-28 px-4 sm:px-6 lg:px-8 bg-background relative">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Why Choose Metryx?</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <div className="text-center mb-20">
+            <div className="inline-block mb-4 px-5 py-1.5 rounded-full bg-primary/10 border border-primary/20">
+              <span className="text-sm font-semibold text-primary">✨ Why Choose Us</span>
+            </div>
+            <h2 className="text-5xl sm:text-6xl font-extrabold text-foreground mb-6">Why Choose Metryx?</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               We combine cutting-edge technology with creative excellence to deliver exceptional results.
             </p>
           </div>
@@ -116,15 +125,16 @@ const Index = () => {
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-2 hover:border-primary/50 animate-fade-in"
+                className="group relative overflow-hidden bg-gradient-card hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-border/50 hover:border-primary/30 animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <CardHeader>
-                  <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
+                <CardHeader className="relative">
+                  <div className="mb-6 p-4 rounded-2xl bg-primary/10 w-fit group-hover:scale-110 group-hover:bg-primary/15 transition-all duration-300">
                     {feature.icon}
                   </div>
-                  <CardTitle className="text-xl mb-2">{feature.title}</CardTitle>
-                  <CardDescription className="text-base">{feature.description}</CardDescription>
+                  <CardTitle className="text-2xl mb-3 font-bold group-hover:text-primary transition-colors duration-300">{feature.title}</CardTitle>
+                  <CardDescription className="text-base leading-relaxed">{feature.description}</CardDescription>
                 </CardHeader>
               </Card>
             ))}
@@ -133,25 +143,28 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-overlay">
-        <div className="container mx-auto">
-          <div className="max-w-3xl mx-auto text-center bg-card rounded-2xl p-12 shadow-lg border-2 border-primary/20">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+      <section className="relative py-28 px-4 sm:px-6 lg:px-8 bg-gradient-overlay overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-hero opacity-50" />
+        <div className="container mx-auto relative z-10">
+          <div className="max-w-4xl mx-auto text-center bg-gradient-card backdrop-blur-sm rounded-3xl p-16 shadow-xl border border-border/50">
+            <h2 className="text-5xl sm:text-6xl font-extrabold text-foreground mb-6 leading-tight">
               Ready to Build Something Amazing?
             </h2>
-            <p className="text-xl text-muted-foreground mb-8">
+            <p className="text-xl sm:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
               Let's discuss your project and turn your ideas into reality. Get a free consultation today.
             </p>
             <Button
               size="lg"
+              variant="gradient"
               onClick={() => setContactModalOpen(true)}
-              className="bg-gradient-primary text-primary-foreground hover:shadow-glow transition-all duration-300 text-lg px-8 py-6"
             >
               Get Started Now
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </div>
         </div>
+        <div className="absolute bottom-10 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute top-10 right-10 w-80 h-80 bg-accent/10 rounded-full blur-3xl" />
       </section>
 
       <Footer />
