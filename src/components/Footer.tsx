@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import metryxLogo from "@/assets/metryx-logo.jpg";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,12 +11,11 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center shadow-glow">
-                <span className="text-2xl font-bold text-primary-foreground">M</span>
-              </div>
-              <span className="text-xl font-bold text-foreground">Metryx</span>
-            </div>
+            <img 
+              src={metryxLogo} 
+              alt="Metryx Technologies Logo" 
+              className="h-12 w-auto"
+            />
             <p className="text-sm text-muted-foreground">
               Transforming ideas into powerful digital solutions that drive business growth and innovation.
             </p>

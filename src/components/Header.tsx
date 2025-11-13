@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
+import metryxLogo from "@/assets/metryx-logo.jpg";
 
 interface HeaderProps {
   onGetInTouch: () => void;
@@ -31,10 +32,11 @@ export const Header = ({ onGetInTouch }: HeaderProps) => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center shadow-glow group-hover:shadow-glow-accent transition-all duration-300 group-hover:scale-105">
-              <span className="text-2xl font-bold text-primary-foreground">M</span>
-            </div>
-            <span className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">Metryx</span>
+            <img 
+              src={metryxLogo} 
+              alt="Metryx Technologies Logo" 
+              className="h-14 w-auto transition-all duration-300 group-hover:scale-105"
+            />
           </Link>
 
           {/* Desktop Navigation */}
