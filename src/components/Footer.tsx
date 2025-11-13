@@ -112,13 +112,13 @@ export const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />
                 <a href="tel:+15551234567" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  +1 (555) 123-4567
+                  +91 123456789
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
                 <a href="mailto:hello@metryx.tech" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  hello@metryx.tech
+                 metryx.techasdfghjk
                 </a>
               </div>
             </div>
