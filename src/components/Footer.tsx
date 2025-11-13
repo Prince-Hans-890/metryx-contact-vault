@@ -11,11 +11,13 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <img 
-              src={metryxLogo} 
-              alt="Metryx Technologies Logo" 
-              className="h-12 w-auto"
-            />
+            <div className="bg-background p-3 rounded-lg inline-block shadow-sm">
+              <img 
+                src={metryxLogo} 
+                alt="Metryx Technologies Logo" 
+                className="h-10 w-auto object-contain"
+              />
+            </div>
             <p className="text-sm text-muted-foreground">
               Transforming ideas into powerful digital solutions that drive business growth and innovation.
             </p>
