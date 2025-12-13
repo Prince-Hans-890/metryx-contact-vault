@@ -17,7 +17,7 @@ const About = () => {
 
   const values = [
     {
-      title: "Innovation",
+      title: "Innovation projects ",
       description: "We stay ahead of the curve, constantly exploring new technologies and methodologies to deliver cutting-edge solutions.",
     },
     {
