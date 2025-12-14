@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Moon, Sun } from "lucide-react";
@@ -13,6 +13,10 @@ export const Header = ({ onGetInTouch }: HeaderProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   const { theme, setTheme } = useTheme();
+  
+  // Mounted check to prevent hydration mismatch
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   const navItems = [
     { label: "Home", path: "/" },
@@ -26,16 +30,22 @@ export const Header = ({ onGetInTouch }: HeaderProps) => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-glass backdrop-blur-xl border-b border-border/50 shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-glass backdrop-blur-xl border-b border-border/50 shadow-sm dark:bg-slate-950/80 dark:border-slate-800 transition-colors duration-300">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+          
+          {/* --- LOGO SECTION (ALWAYS FAVICON) --- */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center shadow-glow group-hover:shadow-glow-accent transition-all duration-300 group-hover:scale-105">
-              <span className="text-2xl font-bold text-primary-foreground">M</span>
-            </div>
-            <span className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">Metryx</span>
+            <img 
+              src="/favicon.ico" 
+              alt="Metryx Logo" 
+              className="w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-110 drop-shadow-md"
+            />
+            <span className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent dark:text-white dark:bg-none">
+              Metryx
+            </span>
           </Link>
+          {/* -------------------------------------- */}
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-2">
@@ -46,13 +56,13 @@ export const Header = ({ onGetInTouch }: HeaderProps) => {
                 className={cn(
                   "px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 relative",
                   isActive(item.path)
-                    ? "text-primary bg-primary/10 shadow-sm"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary/60"
+                    ? "text-primary bg-primary/10 shadow-sm dark:text-white dark:bg-white/10"
+                    : "text-muted-foreground hover:text-foreground hover:bg-secondary/60 dark:text-slate-400 dark:hover:text-white dark:hover:bg-slate-800"
                 )}
               >
                 {item.label}
                 {isActive(item.path) && (
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-primary rounded-full" />
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-primary rounded-full dark:bg-purple-500" />
                 )}
               </Link>
             ))}
@@ -65,6 +75,7 @@ export const Header = ({ onGetInTouch }: HeaderProps) => {
               variant="ghost"
               size="icon"
               aria-label="Toggle theme"
+              className="dark:text-slate-400 dark:hover:text-white"
             >
               <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
@@ -73,12 +84,13 @@ export const Header = ({ onGetInTouch }: HeaderProps) => {
               onClick={onGetInTouch}
               variant="gradient"
               size="default"
+              className="dark:bg-purple-600 dark:text-white dark:hover:bg-purple-700 dark:border-0"
             >
               Get in Touch
             </Button>
           </div>
 
-          {/* Mobile Menu & Theme Toggle */}
+          {/* Mobile Menu Toggle */}
           <div className="md:hidden flex items-center gap-2">
             <Button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -91,13 +103,12 @@ export const Header = ({ onGetInTouch }: HeaderProps) => {
             </Button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-lg hover:bg-secondary/60 transition-all duration-300"
-              aria-label="Toggle menu"
+              className="p-2.5 rounded-lg hover:bg-secondary/60 transition-all duration-300 dark:hover:bg-slate-800"
             >
               {mobileMenuOpen ? (
-                <X className="w-6 h-6 text-foreground" />
+                <X className="w-6 h-6 text-foreground dark:text-white" />
               ) : (
-                <Menu className="w-6 h-6 text-foreground" />
+                <Menu className="w-6 h-6 text-foreground dark:text-white" />
               )}
             </button>
           </div>
@@ -105,7 +116,7 @@ export const Header = ({ onGetInTouch }: HeaderProps) => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-6 border-t border-border/50 animate-fade-in bg-gradient-glass backdrop-blur-xl">
+          <div className="md:hidden py-6 border-t border-border/50 animate-fade-in bg-gradient-glass backdrop-blur-xl dark:bg-slate-950/95 dark:border-slate-800">
             <div className="flex flex-col space-y-2">
               {navItems.map((item) => (
                 <Link
@@ -115,8 +126,8 @@ export const Header = ({ onGetInTouch }: HeaderProps) => {
                   className={cn(
                     "px-5 py-3.5 rounded-lg text-sm font-semibold transition-all duration-300",
                     isActive(item.path)
-                      ? "text-primary bg-primary/10 shadow-sm"
-                      : "text-muted-foreground hover:text-foreground hover:bg-secondary/60"
+                      ? "text-primary bg-primary/10 shadow-sm dark:bg-purple-500/10 dark:text-purple-400"
+                      : "text-muted-foreground hover:text-foreground hover:bg-secondary/60 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
                   )}
                 >
                   {item.label}
@@ -128,7 +139,7 @@ export const Header = ({ onGetInTouch }: HeaderProps) => {
                   setMobileMenuOpen(false);
                 }}
                 variant="gradient"
-                className="mt-2"
+                className="mt-2 dark:bg-purple-600 dark:text-white"
               >
                 Get in Touch
               </Button>
