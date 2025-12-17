@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect, forwardRef } from "react";
+import { Link, useLocation, NavLink as RouterNavLink, NavLinkProps } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -23,7 +23,7 @@ export const Header = ({ onGetInTouch }: HeaderProps) => {
     { label: "About", path: "/about" },
     { label: "Services", path: "/services" },
     { label: "Projects", path: "/projects" },
-    { label: "Testimonials", path: "/testimonials" },
+    
     { label: "Contact", path: "/contact" },
   ];
 
@@ -34,18 +34,20 @@ export const Header = ({ onGetInTouch }: HeaderProps) => {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
-          {/* --- LOGO SECTION (ALWAYS FAVICON) --- */}
-          <Link to="/" className="flex items-center space-x-3 group">
+          {/* --- LOGO SECTION --- */}
+          <Link to="/" className="flex items-center space-x-2 group">
+            {/* FIX: Pointing to the file with the double extension .png.png */}
             <img 
-              src="/favicon.ico" 
+              src="/metryx-full-logo.png.png" 
               alt="Metryx Logo" 
-              className="w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-110 drop-shadow-md"
+              className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
+            {/* Text alongside the image */}
             <span className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent dark:text-white dark:bg-none">
               Metryx
             </span>
           </Link>
-          {/* -------------------------------------- */}
+          {/* ------------------- */}
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-2">
@@ -150,3 +152,29 @@ export const Header = ({ onGetInTouch }: HeaderProps) => {
     </header>
   );
 };
+
+// --- NavLink Component (Required for your setup) ---
+interface NavLinkCompatProps extends Omit<NavLinkProps, "className"> {
+  className?: string;
+  activeClassName?: string;
+  pendingClassName?: string;
+}
+
+const NavLink = forwardRef<HTMLAnchorElement, NavLinkCompatProps>(
+  ({ className, activeClassName, pendingClassName, to, ...props }, ref) => {
+    return (
+      <RouterNavLink
+        ref={ref}
+        to={to}
+        className={({ isActive, isPending }) =>
+          cn(className, isActive && activeClassName, isPending && pendingClassName)
+        }
+        {...props}
+      />
+    );
+  },
+);
+
+NavLink.displayName = "NavLink";
+
+export { NavLink };

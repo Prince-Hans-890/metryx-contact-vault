@@ -30,15 +30,6 @@ export const Footer = () => {
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 flex items-center justify-center"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -75,9 +66,7 @@ export const Footer = () => {
               <Link to="/projects" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Projects
               </Link>
-              <Link to="/testimonials" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Testimonials
-              </Link>
+            
               <Link to="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Contact
               </Link>
@@ -104,7 +93,7 @@ export const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-sm text-muted-foreground">
-                 CGC University, Mohali, Punjab, India - 140307
+                 Mohali, Punjab, India - 140307
                 </span>
               </div>
               <div className="flex items-center space-x-3">
@@ -130,12 +119,8 @@ export const Footer = () => {
               © {currentYear} Metryx Technologies. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <Link to="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Privacy Policy
-              </Link>
-              <Link to="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Terms of Service
-              </Link>
+              
+              
             </div>
           </div>
         </div>
