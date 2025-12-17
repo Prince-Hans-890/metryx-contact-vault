@@ -9,15 +9,15 @@ const About = () => {
   const [contactModalOpen, setContactModalOpen] = useState(false);
 
   const stats = [
-    { icon: <Users className="w-8 h-8" />, number: "100+", label: "Happy Clients" },
-    { icon: <Award className="w-8 h-8" />, number: "250+", label: "Projects Completed" },
+    { icon: <Users className="w-8 h-8" />, number: "5+", label: "Happy Clients" },
+    { icon: <Award className="w-8 h-8" />, number: "7+", label: "Projects Completed" },
     { icon: <TrendingUp className="w-8 h-8" />, number: "98%", label: "Client Satisfaction" },
-    { icon: <Target className="w-8 h-8" />, number: "5+", label: "Years Experience" },
+    { icon: <Target className="w-8 h-8" />, number: "1+", label: "Years Experience" },
   ];
 
   const values = [
     {
-      title: "Innovation projects asdfggi ",
+      title: "Innovation projects ",
       description: "We stay ahead of the curve, constantly exploring new technologies and methodologies to deliver cutting-edge solutions.",
     },
     {
@@ -46,7 +46,7 @@ const About = () => {
             <div className="inline-block mb-6 px-6 py-2 rounded-full bg-gradient-glass backdrop-blur-md border border-primary/20 shadow-lg">
               <span className="text-sm font-semibold bg-gradient-primary bg-clip-text text-transparent">👥 Our Story</span>
             </div>
-            <h1 className="text-6xl sm:text-7xl font-extrabold text-foreground mb-8">About Metryx</h1>
+            <h1 className="text-6xl sm:text-7xl font-extrabold text-foreground mb-8">About Metryx Technologies</h1>
             <p className="text-xl sm:text-2xl text-muted-foreground leading-relaxed">
               We're a team of passionate developers, designers, and strategists dedicated to transforming 
               businesses through innovative digital solutions.
@@ -92,20 +92,21 @@ const About = () => {
             </div>
             <div className="space-y-8 text-lg text-muted-foreground bg-gradient-card backdrop-blur-sm rounded-3xl p-12 shadow-xl border border-border/50">
               <p className="leading-relaxed text-xl">
-                Founded in 2019, Metryx Technologies emerged from a simple belief: every business deserves 
+                Founded in 2024, Metryx Technologies emerged from a simple belief: every business deserves 
                 a powerful digital presence that drives real results. What started as a small team of three 
                 passionate developers has grown into a full-service web development agency serving clients 
                 across the globe.
               </p>
               <p className="leading-relaxed text-xl">
-                Our journey has been fueled by curiosity, innovation, and an unwavering commitment to our 
-                clients' success. We've worked with startups finding their footing, established businesses 
-                undergoing digital transformation, and everything in between.
+                From day one, our focus has been simple - clarity over clutter, performance over promises, and results over buzzwords. 
+  We’ve worked with early-stage startups trying to get their first customers, and growing businesses that needed systems 
+  that scale instead of breaking under pressure.
               </p>
               <p className="leading-relaxed text-xl">
-                Today, we're proud to be a trusted partner for businesses seeking to leverage technology 
-                for growth. From e-commerce platforms that convert to stunning portfolios that impress, 
-                we bring expertise, creativity, and dedication to every project.
+                That mindset shaped everything that followed. From early-stage startups to growing brands, we focus on building 
+  fast, clear, and conversion-driven digital experiences. As we like to say, 
+  <em>“A website isn’t art—it’s a tool. If it doesn’t work, it doesn’t matter how good it looks.”</em>
+  That’s the standard we bring to every project at Metryx.
               </p>
             </div>
           </div>

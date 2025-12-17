@@ -46,30 +46,15 @@ const Services = () => {
       description: "Beautiful, intuitive interfaces designed to engage users and drive conversions.",
       features: ["User Research", "Wireframing", "Prototyping", "Design Systems"],
     },
-    {
-      icon: <Cloud className="w-10 h-10 text-primary" />,
-      title: "Cloud Solutions",
-      description: "Scalable cloud infrastructure and migration services for businesses of all sizes.",
-      features: ["AWS & Azure", "DevOps Setup", "CI/CD Pipelines", "Cloud Migration"],
-    },
+    
     {
       icon: <BarChart className="w-10 h-10 text-primary" />,
       title: "Digital Marketing",
       description: "Data-driven marketing strategies to grow your online presence and reach your target audience.",
       features: ["SEO Optimization", "Content Strategy", "Social Media", "Analytics"],
     },
-    {
-      icon: <Database className="w-10 h-10 text-primary" />,
-      title: "Database Design",
-      description: "Efficient, secure database architectures optimized for performance and scalability.",
-      features: ["Schema Design", "Query Optimization", "Data Migration", "Backup Solutions"],
-    },
-    {
-      icon: <Lock className="w-10 h-10 text-primary" />,
-      title: "Security Services",
-      description: "Comprehensive security audits and implementation of best practices to protect your assets.",
-      features: ["Security Audits", "SSL Certificates", "Data Encryption", "Compliance"],
-    },
+    
+    
     {
       icon: <Zap className="w-10 h-10 text-primary" />,
       title: "API Development",

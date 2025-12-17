@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2, CheckCircle2 } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+// Removed Supabase import
 import { z } from "zod";
 
 interface ContactModalProps {
@@ -22,6 +22,9 @@ const contactSchema = z.object({
   subject: z.string().trim().max(200, "Subject must be less than 200 characters").optional(),
   message: z.string().trim().min(10, "Message must be at least 10 characters").max(1000, "Message must be less than 1000 characters"),
 });
+
+// !!! PASTE YOUR SHEETDB URL HERE !!!
+const SHEETDB_URL = "https://sheetdb.io/api/v1/5dvogiri9mr38"; 
 
 export const ContactModal = ({ open, onOpenChange, source = "modal" }: ContactModalProps) => {
   const { toast } = useToast();
@@ -39,7 +42,6 @@ export const ContactModal = ({ open, onOpenChange, source = "modal" }: ContactMo
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Prevent duplicate submissions
     if (isSubmitting) return;
 
     // Validate form data
@@ -62,17 +64,32 @@ export const ContactModal = ({ open, onOpenChange, source = "modal" }: ContactMo
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase.from("contacts").insert({
+      // 1. Prepare the data payload (including the Date)
+      const payload = {
         name: formData.name.trim(),
         email: formData.email.trim().toLowerCase(),
-        phone: formData.phone.trim() || null,
-        subject: formData.subject.trim() || null,
+        phone: formData.phone.trim() || "",
+        subject: formData.subject.trim() || "",
         message: formData.message.trim(),
         source: source,
+        date: new Date().toLocaleString(), // SheetDB doesn't add dates automatically like Supabase
+      };
+
+      // 2. Send to Google Sheets via SheetDB
+      const response = await fetch(SHEETDB_URL, {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ data: payload }),
       });
 
-      if (error) throw error;
+      if (!response.ok) {
+        throw new Error("Failed to send to Google Sheets");
+      }
 
+      // Success Logic
       setIsSuccess(true);
       toast({
         title: "Message sent successfully!",
@@ -91,6 +108,7 @@ export const ContactModal = ({ open, onOpenChange, source = "modal" }: ContactMo
         setIsSuccess(false);
         onOpenChange(false);
       }, 2000);
+
     } catch (error) {
       console.error("Error submitting contact form:", error);
       toast({
@@ -105,7 +123,6 @@ export const ContactModal = ({ open, onOpenChange, source = "modal" }: ContactMo
 
   const handleInputChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
-    // Clear error when user starts typing
     if (errors[field]) {
       setErrors((prev) => {
         const newErrors = { ...prev };

@@ -86,15 +86,9 @@ const Contact = () => {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {contactInfo.map((item, index) => (
-              <Card 
-                key={index} 
-                className="group relative overflow-hidden border-none shadow-lg hover:shadow-xl transition-all duration-300 bg-background/50 backdrop-blur-sm dark:bg-slate-950"
-              >
-                {/* Lightning/Shine Effect */}
-                <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-primary/20 to-transparent skew-x-12 pointer-events-none" />
-                
-                <CardContent className="flex flex-col items-center text-center p-8 relative z-10">
-                  <div className="mb-4 p-4 rounded-full bg-primary/10 dark:bg-slate-900 group-hover:scale-110 transition-transform duration-300">
+              <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 bg-background/50 backdrop-blur-sm dark:bg-slate-950">
+                <CardContent className="flex flex-col items-center text-center p-8">
+                  <div className="mb-4 p-4 rounded-full bg-primary/10 dark:bg-slate-900">
                     {item.icon}
                   </div>
                   <h3 className="text-xl font-bold mb-2">{item.title}</h3>
@@ -176,7 +170,7 @@ const Contact = () => {
             <div className="rounded-2xl overflow-hidden shadow-xl border border-border/50 relative dark:border-slate-800 h-[500px] lg:h-full min-h-[500px]">
               {/* Embed Code for Mohali, Punjab */}
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109744.22709340508!2d76.6934882164986!3d30.73225442201366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fed0be66ec96b%3A0xa5ff67f9527319fe!2sSahibzada%20Ajit%20Singh%20Nagar%2C%20Punjab!5e0!3m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109741.02912911311!2d76.69348821644755!3d30.73506264436677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fed0be66ec96b%3A0xa5ff67f9527319fe!2sSahibzada%20Ajit%20Singh%20Nagar%2C%20Punjab!5e0!3m2!1sen!2sin!4v1715000000000!5m2!1sen!2sin"
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
