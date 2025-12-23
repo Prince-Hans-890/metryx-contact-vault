@@ -10,11 +10,15 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center shadow-glow">
-                <span className="text-2xl font-bold text-primary-foreground">M</span>
-              </div>
-              <span className="text-xl font-bold text-foreground">Metryx</span>
+            <div className="flex items-center">
+              {/* Updated Logo: Removed old image and text span, added unified logo */}
+              <Link to="/">
+                <img 
+                  src="/logo2-removebg-preview.png" 
+                  alt="Metryx Logo" 
+                  className="h-10 w-auto object-contain" 
+                />
+              </Link>
             </div>
             <p className="text-sm text-muted-foreground">
               Transforming ideas into powerful digital solutions that drive business growth and innovation.
@@ -26,7 +30,7 @@ export const Footer = () => {
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 flex items-center justify-center"
                 aria-label="Facebook"
-              >
+              > 
                 <Facebook className="w-5 h-5" />
               </a>
               <a
@@ -81,8 +85,6 @@ export const Footer = () => {
               <span className="text-sm text-muted-foreground">E-commerce Solutions</span>
               <span className="text-sm text-muted-foreground">Mobile Applications</span>
               <span className="text-sm text-muted-foreground">UI/UX Design</span>
-              {/* <span className="text-sm text-muted-foreground">Digital Marketing</span> */}
-              {/* <span className="text-sm text-muted-foreground">Cloud Solutions</span> */}
             </nav>
           </div>
 
@@ -93,18 +95,18 @@ export const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-sm text-muted-foreground">
-                 Mohali, Punjab, India - 140307
+                  Mohali, Punjab, India - 140307
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-                <a href="tel:+15551234567" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a href="tel:+916239686446" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   +91-6239686446
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                <a href="mailto:hello@metryx.tech" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a href="mailto:metryxtechnologies@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   metryxtechnologies@gmail.com
                 </a>
               </div>
@@ -119,8 +121,6 @@ export const Footer = () => {
               © {currentYear} Metryx Technologies. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              
-              
             </div>
           </div>
         </div>
@@ -128,5 +128,3 @@ export const Footer = () => {
     </footer>
   );
 };
- 
-

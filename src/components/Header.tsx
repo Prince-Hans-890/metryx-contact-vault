@@ -34,19 +34,15 @@ export const Header = ({ onGetInTouch }: HeaderProps) => {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
-          {/* --- LOGO SECTION --- */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            {/* FIX: Pointing to the file with the double extension .png.png */}
-            <img 
-              src="/metryx-full-logo.png.png" 
-              alt="Metryx Logo" 
-              className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-            />
-            {/* Text alongside the image */}
-            <span className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent dark:text-white dark:bg-none">
-              Metryx
-            </span>
-          </Link>
+         
+{/* --- LOGO SECTION --- */}
+<Link to="/" className="flex items-center group">
+  <img 
+    src="/logo2-removebg-preview.png" // Replace with your actual filename
+    alt="Metryx Logo" 
+    className="h-10 w-auto object-contain" 
+  />
+</Link>
           {/* ------------------- */}
 
           {/* Desktop Navigation */}

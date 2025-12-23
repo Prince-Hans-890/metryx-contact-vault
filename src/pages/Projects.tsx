@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-
 const Projects = () => {
   const [contactModalOpen, setContactModalOpen] = useState(false);
 
@@ -23,10 +22,10 @@ const Projects = () => {
       title: "E-commerce Shoe Store",
       description: "A high-performance digital storefront optimized for the footwear industry, focusing on conversion-driven UX.",
       images: [
-        "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&h=600&fit=crop"
+        "/s4.png", 
+        "/s2.jpeg",
+        "/s3.jpeg",
+        "/s1.jpeg"
       ],
       tags: ["E-commerce", "React", "Node.js"],
       bulletPoints: [
@@ -40,10 +39,10 @@ const Projects = () => {
       title: "Real Estate Website",
       description: "A luxury property ecosystem featuring real-time MLS integration and immersive visual tours.",
       images: [
-        "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1430285539453-74439949136b?w=800&h=600&fit=crop"
+        "/rs1.jpg", 
+        "/rs2.jpg",
+        "/rs7.jpeg",
+        "/rs6.jpeg"
       ],
       tags: ["Real Estate", "TypeScript", "Maps API"],
       bulletPoints: [
@@ -57,10 +56,10 @@ const Projects = () => {
       title: "Restaurant Website",
       description: "A full-stack culinary platform managing seasonal digital menus and automated kitchen lead times.",
       images: [
-        "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&h=600&fit=crop"
+        "/rest.png",
+        "/rest2.png",
+        "/rest 3.png",
+        "/rest4.png"
       ],
       tags: ["Restaurant", "React", "Firebase"],
       bulletPoints: [
@@ -103,15 +102,25 @@ const Projects = () => {
                     <CarouselContent>
                       {project.images.map((img, i) => (
                         <CarouselItem key={i}>
-                          <Card className="overflow-hidden border-none shadow-xl rounded-2xl">
-                            <div className="aspect-video relative">
-                              <img src={img} alt={project.title} className="w-full h-full object-cover" />
+                          <Card className="overflow-hidden border-none shadow-xl rounded-2xl bg-black/5 dark:bg-white/5">
+                            {/* Container set to aspect-video (16:9). 
+                               Flexbox ensures the image stays centered if it doesn't fill the width.
+                            */}
+                            <div className="aspect-video relative w-full flex items-center justify-center overflow-hidden">
+                              <img 
+                                src={img} 
+                                alt={project.title} 
+                                /* object-contain: Shows the WHOLE image without cropping.
+                                   max-w-full & max-h-full: Prevents the image from overflowing the box.
+                                */
+                                className="max-w-full max-h-full w-auto h-auto object-contain transition-transform duration-500 hover:scale-105" 
+                              />
                             </div>
                           </Card>
                         </CarouselItem>
                       ))}
                     </CarouselContent>
-                    {/* Navigation Arrows on the sides */}
+                    {/* Navigation Arrows */}
                     <CarouselPrevious className="-left-14 opacity-0 group-hover:opacity-100 transition-opacity" />
                     <CarouselNext className="-right-14 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Carousel>
