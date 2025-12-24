@@ -27,7 +27,7 @@ const Projects = () => {
     {
       title: "E-commerce Shoe Store",
       description: "A high-performance digital storefront optimized for the footwear industry, focusing on conversion-driven UX.",
-      images: ["/shoes1.png", "/shoes2.png", "/s1.jpeg", "/s2.jpeg"],
+      images: ["/shoes1.png", "/shoes2.png", "/s1.jpeg", "/s2.jpeg","/shoe.jpeg","/s11.jpeg"],
       tags: ["E-commerce", "React", "Node.js"],
       bulletPoints: [
         "Advanced filtering by size and color",
@@ -39,7 +39,7 @@ const Projects = () => {
     {
       title: "Real Estate Website",
       description: "A luxury property ecosystem featuring real-time MLS integration and immersive visual tours.",
-      images: ["/rs1.jpg", "/rs2.jpg", "/rs3.jpg", "/rs5.jpeg"],
+      images: ["/rs1.jpg", "/rs2.jpg", "/rs3.jpg", "/rs5.jpeg","/rs10.jpeg"],
       tags: ["Real Estate", "TypeScript", "Maps API"],
       bulletPoints: [
         "Interactive 4K virtual property tours",
@@ -51,7 +51,7 @@ const Projects = () => {
     {
       title: "Restaurant Website",
       description: "A full-stack culinary platform managing seasonal digital menus and automated kitchen lead times.",
-      images: ["/rest.png", "/rest2.png", "/rest%203.png", "/rest4.png"],
+      images: ["/rest.png", "/rest2.png", "/rest%203.png", "/rest4.png","/rest5.png"],
       tags: ["Restaurant", "React", "Firebase"],
       bulletPoints: [
         "Live table reservation with POS sync",
