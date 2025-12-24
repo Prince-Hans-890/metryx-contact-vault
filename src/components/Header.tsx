@@ -14,7 +14,6 @@ export const Header = ({ onGetInTouch }: HeaderProps) => {
   const location = useLocation();
   const { theme, setTheme } = useTheme();
   
-  // Mounted check to prevent hydration mismatch
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
@@ -23,7 +22,6 @@ export const Header = ({ onGetInTouch }: HeaderProps) => {
     { label: "About", path: "/about" },
     { label: "Services", path: "/services" },
     { label: "Projects", path: "/projects" },
-    
     { label: "Contact", path: "/contact" },
   ];
 
@@ -32,18 +30,17 @@ export const Header = ({ onGetInTouch }: HeaderProps) => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-glass backdrop-blur-xl border-b border-border/50 shadow-sm dark:bg-slate-950/80 dark:border-slate-800 transition-colors duration-300">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        {/* Compact height: h-16 on mobile, h-20 on desktop */}
+        <div className="flex items-center justify-between h-16 md:h-20">
           
-         
-{/* --- LOGO SECTION --- */}
-<Link to="/" className="flex items-center group">
-  <img 
-    src="/logo2-removebg-preview.png" // Replace with your actual filename
-    alt="Metryx Logo" 
-    className="h-10 w-auto object-contain" 
-  />
-</Link>
-          {/* ------------------- */}
+          {/* Logo Section - Scaled for mobile */}
+          <Link to="/" className="flex items-center group">
+            <img 
+              src="/logo2-removebg-preview.png" 
+              alt="Metryx Logo" 
+              className="h-8 md:h-10 w-auto object-contain" 
+            />
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-2">
@@ -66,7 +63,7 @@ export const Header = ({ onGetInTouch }: HeaderProps) => {
             ))}
           </div>
 
-          {/* CTA Button & Theme Toggle */}
+          {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-2">
             <Button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -88,33 +85,34 @@ export const Header = ({ onGetInTouch }: HeaderProps) => {
             </Button>
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <div className="md:hidden flex items-center gap-2">
+          {/* Mobile Actions - Minimized padding and icon sizes */}
+          <div className="md:hidden flex items-center gap-1">
             <Button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               variant="ghost"
               size="icon"
               aria-label="Toggle theme"
+              className="h-9 w-9"
             >
-              <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-              <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+              <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             </Button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-lg hover:bg-secondary/60 transition-all duration-300 dark:hover:bg-slate-800"
+              className="p-2 rounded-lg hover:bg-secondary/60 transition-all duration-300 dark:hover:bg-slate-800"
             >
               {mobileMenuOpen ? (
-                <X className="w-6 h-6 text-foreground dark:text-white" />
+                <X className="w-5 h-5 text-foreground dark:text-white" />
               ) : (
-                <Menu className="w-6 h-6 text-foreground dark:text-white" />
+                <Menu className="w-5 h-5 text-foreground dark:text-white" />
               )}
             </button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-6 border-t border-border/50 animate-fade-in bg-gradient-glass backdrop-blur-xl dark:bg-slate-950/95 dark:border-slate-800">
+          <div className="md:hidden py-4 border-t border-border/50 animate-fade-in bg-gradient-glass backdrop-blur-xl dark:bg-slate-950/95 dark:border-slate-800">
             <div className="flex flex-col space-y-2">
               {navItems.map((item) => (
                 <Link
@@ -122,7 +120,7 @@ export const Header = ({ onGetInTouch }: HeaderProps) => {
                   to={item.path}
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    "px-5 py-3.5 rounded-lg text-sm font-semibold transition-all duration-300",
+                    "px-5 py-3 rounded-lg text-sm font-semibold transition-all duration-300",
                     isActive(item.path)
                       ? "text-primary bg-primary/10 shadow-sm dark:bg-purple-500/10 dark:text-purple-400"
                       : "text-muted-foreground hover:text-foreground hover:bg-secondary/60 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
@@ -149,7 +147,7 @@ export const Header = ({ onGetInTouch }: HeaderProps) => {
   );
 };
 
-// --- NavLink Component (Required for your setup) ---
+// Reusable NavLink Component
 interface NavLinkCompatProps extends Omit<NavLinkProps, "className"> {
   className?: string;
   activeClassName?: string;
