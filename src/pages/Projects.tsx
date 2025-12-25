@@ -27,7 +27,7 @@ const Projects = () => {
     {
       title: "E-commerce Shoe Store",
       description: "A high-performance digital storefront optimized for the footwear industry, focusing on conversion-driven UX.",
-      images: ["/shoes1.png", "/shoes2.png", "/s1.jpeg", "/s2.jpeg","/shoe.jpeg","/s11.jpeg"],
+      images: ["/shoes2.png", "/s1.jpeg", "/s2.jpeg","/shoe.jpeg","/s11.jpeg","/ss.png"],
       tags: ["E-commerce", "React", "Node.js"],
       bulletPoints: [
         "Advanced filtering by size and color",
