@@ -48,6 +48,7 @@ const Projects = () => {
         "Secure client document portal"
       ],
     },
+    
     {
       title: "Restaurant Website",
       description: "A full-stack culinary platform managing seasonal digital menus and automated kitchen lead times.",
@@ -60,6 +61,42 @@ const Projects = () => {
         "Automated SMS notifications"
       ],
     },
+    {
+      title: "RISA Bridal Store",
+      description: " A luxury digital storefront crafted for RISA, a premier bridal brand — designed to evoke elegance and drive seamless discovery of bridal collections.",
+      images: ["/r1.png", "/r2.png", "/r3.png", "/r4.png","/r5.png"],
+      tags: ["E-Commerce", "Node.js", "React"],
+      bulletPoints: [
+        "Elegant bridal collection showcase with lookbook-style gallery",
+    "Advanced filtering by style, size, and fabric",
+    "Appointment booking system for in-store consultations",
+    "Seamless mobile-first experience for on-the-go browsing",
+      ],
+    },
+    {
+  title: "Movable Stuff",
+  description: "A modern e-commerce platform built for Movable Stuff, a contemporary furniture brand — designed to inspire home styling and simplify the journey from discovery to delivery.",
+  images: ["/ms1.png", "/ms2.png", "/ms3.png", "/ms4.png", "/ms5.png"],
+  tags: ["E-Commerce", "Node.js", "React"],
+  bulletPoints: [
+    "Curated furniture showcase with room-scene style photography",
+    "Advanced filtering by category, material, and price range",
+    "Interactive room visualizer for previewing furniture in your space",
+    "Seamless cart and checkout with delivery scheduling built-in",
+  ],
+},
+{
+  title: "Malik Jewellers",
+  description: "A sophisticated online presence built for Malik Jewellers, a heritage jewellery brand — designed to reflect craftsmanship, trust, and the timeless allure of fine jewellery.",
+  images: ["/mj1.png", "/mj2.png", "/mj3.png", "/mj4.png", "/mj5.png"],
+  tags: ["E-Commerce", "React", "Node.js"],
+  bulletPoints: [
+    "Elegant jewellery showcase with high-resolution zoom and detail views",
+    "Collection filtering by metal type, gemstone, and occasion",
+    "Custom engraving and personalization request system",
+    "Secure checkout with certificate of authenticity for each piece",
+  ],
+},
   ];
 
   return (
@@ -83,10 +120,11 @@ const Projects = () => {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className={cn(
-                  "flex flex-col gap-8 lg:gap-24 items-center",
-                  project.title === "Real Estate Website" ? "lg:flex-row-reverse" : "lg:flex-row"
-                )}
+                // Line 89 - REPLACE WITH THIS
+className={cn(
+  "flex flex-col gap-8 lg:gap-24 items-center",
+  index % 2 !== 0 ? "lg:flex-row-reverse" : "lg:flex-row"
+)}
               >
                 {/* Image Section */}
                 <div className="w-full lg:w-1/2 relative group">
