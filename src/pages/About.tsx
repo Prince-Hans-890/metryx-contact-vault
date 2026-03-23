@@ -104,7 +104,7 @@ const About = () => {
             </div>
             <div className="space-y-6 md:space-y-8 text-base md:text-lg text-muted-foreground bg-gradient-card backdrop-blur-sm rounded-2xl md:rounded-3xl p-6 md:p-12 shadow-xl border border-border/50">
               <p className="leading-relaxed md:text-xl">
-                Founded in 2024, Metryx Technologies emerged from a simple belief: every business deserves 
+                Founded in 2025, Metryx Technologies emerged from a simple belief: every business deserves 
                 a powerful digital presence that drives real results. What started as a small team of three 
                 passionate developers has grown into a full-service web development agency serving clients 
                 across the globe.
