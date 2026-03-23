@@ -13,7 +13,7 @@ export const Header = ({ onGetInTouch }: HeaderProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   const { theme, setTheme } = useTheme();
-  
+
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
@@ -32,13 +32,16 @@ export const Header = ({ onGetInTouch }: HeaderProps) => {
       <nav className="px-4 sm:px-6">
         {/* Compact height: h-16 on mobile, h-14 on desktop */}
         <div className="flex items-center justify-between h-16 md:h-14">
-          
+
           {/* Logo Section - Scaled for mobile */}
           <Link to="/" className="flex items-center group">
-            <span className="text-xl font-bold tracking-tight text-foreground">
-              Metryx<span className="text-primary">.</span>
-            </span>
+            <img 
+              src="/logo2-removebg-preview.png" 
+              alt="Metryx Logo" 
+              className="h-8 md:h-10 w-auto object-contain" 
+            />
           </Link>
+          
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">

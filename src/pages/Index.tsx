@@ -55,7 +55,11 @@ const Index = () => {
       <Header onGetInTouch={() => setContactModalOpen(true)} />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative pt-32 pb-10 md:pt-48 md:pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Animated Gradient Backgrounds */}
+        <div className="absolute top-0 left-1/4 w-full md:w-[40rem] h-[40rem] bg-primary/20 rounded-full blur-[120px] mix-blend-multiply dark:mix-blend-screen opacity-70 animate-pulse" style={{ animationDuration: '4s' }} />
+        <div className="absolute -top-20 right-1/4 w-full md:w-[40rem] h-[40rem] bg-blue-400/20 rounded-full blur-[120px] mix-blend-multiply dark:mix-blend-screen opacity-70 animate-pulse" style={{ animationDuration: '6s', animationDelay: '2s' }} />
+
         {/* Minimalist Background Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
         
@@ -97,9 +101,14 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden">
-        <div className="container mx-auto">
-          <div className="text-center md:text-left mb-16 max-w-2xl mx-auto md:mx-0">
+      <section className="py-10 md:py-16 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden">
+        {/* Elevate Standards Background Designs */}
+        <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-[30rem] h-[30rem] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-0 right-0 translate-y-1/3 translate-x-1/3 w-[40rem] h-[40rem] bg-indigo-500/5 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
+
+        <div className="container mx-auto relative z-10">
+          <div className="text-center md:text-left mb-12 max-w-2xl mx-auto md:mx-0">
             <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-2">Why Us?</h2>
             <h3 className="text-3xl md:text-5xl font-bold text-foreground mb-4 leading-tight">Elevate your standards.</h3>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
@@ -136,7 +145,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-24 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden z-10 border-t border-border/30">
+      <section className="relative py-12 md:py-16 px-4 sm:px-6 lg:px-8 overflow-hidden z-10 border-t border-border/30">
         {/* Subtle grid pattern background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:32px_32px]" />
         

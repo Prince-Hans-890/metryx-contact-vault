@@ -127,7 +127,7 @@ const Projects = () => {
         </div>
       </section>
 
-      <section className="py-8 md:py-20 px-4 sm:px-6 lg:px-16">
+      <section className="py-8 md:py-16 px-4 sm:px-6 lg:px-16">
         <div className="container mx-auto">
           <div className="space-y-16 md:space-y-32">
             {projects.map((project, index) => (

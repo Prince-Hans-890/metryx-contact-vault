@@ -39,7 +39,8 @@ const About = () => {
       <Header onGetInTouch={() => setContactModalOpen(true)} />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 md:pt-40 md:pb-28 px-4 sm:px-6 lg:px-8 bg-background overflow-hidden border-b border-border/30">
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-12 md:pt-40 md:pb-16 px-4 sm:px-6 lg:px-8 bg-background overflow-hidden border-b border-border/30">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
         <div className="container mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
@@ -58,7 +59,7 @@ const About = () => {
       </section>
 
       {/* Stats Section - Fixed into a 2x2 Matrix */}
-<section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8">
+<section className="py-12 md:py-16 px-4 sm:px-6 lg:px-8">
   <div className="container mx-auto">
     {/* grid-cols-2 ensures it stays 2x2 on all screens */}
     <div className="grid grid-cols-2 gap-4 md:gap-8 max-w-4xl mx-auto">
@@ -90,7 +91,7 @@ const About = () => {
 </section>
 
       {/* Story Section - Adjusted text sizes and padding */}
-      <section className="py-12 md:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-overlay relative">
+      <section className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-overlay relative">
         <div className="absolute inset-0 bg-gradient-hero opacity-30" />
         <div className="container mx-auto relative z-10">
           <div className="max-w-5xl mx-auto">
@@ -124,7 +125,7 @@ const About = () => {
       </section>
 
       {/* Values Section - Spacing and card padding refined */}
-      <section className="py-12 md:py-28 px-4 sm:px-6 lg:px-8 bg-background">
+      <section className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-background">
         <div className="container mx-auto">
           <div className="text-center mb-12 md:mb-20">
             <div className="inline-block mb-4 px-5 py-1.5 rounded-full bg-primary/10 border border-primary/20">

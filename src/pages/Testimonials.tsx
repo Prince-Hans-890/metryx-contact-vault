@@ -58,7 +58,7 @@ const Testimonials = () => {
     <div className="min-h-screen bg-background">
       <Header onGetInTouch={() => setContactModalOpen(true)} />
 
-      <section className="relative pt-40 pb-28 px-4 sm:px-6 lg:px-8 bg-gradient-hero overflow-hidden">
+      <section className="relative pt-32 md:pt-40 pb-12 md:pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-hero overflow-hidden">
         <div className="absolute inset-0 bg-gradient-overlay opacity-50" />
         <div className="container mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
@@ -75,7 +75,7 @@ const Testimonials = () => {
         <div className="absolute bottom-10 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
       </section>
 
-      <section className="py-28 px-4 sm:px-6 lg:px-8">
+      <section className="py-12 md:py-16 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
