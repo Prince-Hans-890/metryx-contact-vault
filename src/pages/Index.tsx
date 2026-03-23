@@ -1,113 +1,93 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ContactModal } from "@/components/ContactModal";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ArrowRight, Code, Palette, Rocket, Shield, Zap, TrendingUp } from "lucide-react";
+import { Code, Palette, Rocket, Shield, Zap, TrendingUp } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const Index = () => {
   const [contactModalOpen, setContactModalOpen] = useState(false);
-  const [typedText, setTypedText] = useState("");
-  const fullText = "Innovative Web Solutions";
-
-  useEffect(() => {
-    let index = 0;
-    const timer = setInterval(() => {
-      if (index <= fullText.length) {
-        setTypedText(fullText.substring(0, index));
-        index++;
-      } else {
-        clearInterval(timer);
-      }
-    }, 100);
-
-    return () => clearInterval(timer);
-  }, []);
 
   const features = [
     {
-      icon: <Code className="w-8 h-8 text-primary dark:text-indigo-500" />,
+      icon: <Code className="w-5 h-5 text-primary" />,
       title: "Custom Development",
-      description: "Tailored solutions built from scratch to match your unique business needs and goals.",
+      description: "Tailored architectures built to perfectly match your specific operational needs and goals.",
+      className: "md:col-span-2 md:row-span-1",
     },
     {
-      icon: <Palette className="w-8 h-8 text-primary dark:text-purple-500" />,
-      title: "Modern Design",
-      description: "Beautiful, responsive interfaces that engage users and elevate your brand.",
+      icon: <Palette className="w-5 h-5 text-foreground/80 dark:text-muted-foreground" />,
+      title: "Precision Design",
+      description: "Interfaces meticulously crafted for engagement and brand elevation.",
+      className: "md:col-span-1 md:row-span-1",
     },
     {
-      icon: <Zap className="w-8 h-8 text-primary dark:text-yellow-500" />,
-      title: "Lightning Fast",
-      description: "Optimized performance ensuring quick load times and seamless user experiences.",
+      icon: <Zap className="w-5 h-5 text-foreground/80 dark:text-muted-foreground" />,
+      title: "Optimized Performance",
+      description: "Engineered for speed, ensuring seamless user experiences and lower bounce rates.",
+      className: "md:col-span-1 md:row-span-1",
     },
     {
-      icon: <Shield className="w-8 h-8 text-primary dark:text-emerald-500" />,
-      title: "Secure & Reliable",
-      description: "Enterprise-grade security measures protecting your data and users.",
+      icon: <Shield className="w-5 h-5 text-primary" />,
+      title: "Enterprise Security",
+      description: "Robust data protection measures and secure architectures out of the box.",
+      className: "md:col-span-2 md:row-span-1",
     },
     {
-      icon: <Rocket className="w-8 h-8 text-primary dark:text-orange-500" />,
-      title: "Scalable Solutions",
-      description: "Architecture designed to grow with your business from startup to enterprise.",
+      icon: <Rocket className="w-5 h-5 text-foreground/80 dark:text-muted-foreground" />,
+      title: "Scalable Infrastructure",
+      description: "Built to gracefully handle growth from inception to enterprise scale.",
+      className: "md:col-span-2 md:row-span-1",
     },
     {
-      icon: <TrendingUp className="w-8 h-8 text-primary dark:text-blue-500" />,
-      title: "SEO Optimized",
-      description: "Built-in best practices to help your website rank higher in search results.",
+      icon: <TrendingUp className="w-5 h-5 text-foreground/80 dark:text-muted-foreground" />,
+      title: "Search Optimized",
+      description: "Foundational SEO practices integrated from the first line of code.",
+      className: "md:col-span-1 md:row-span-1",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-hero dark:bg-slate-950 dark:text-slate-100 transition-colors duration-500 overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground transition-colors duration-500 overflow-x-hidden pt-10">
       <Header onGetInTouch={() => setContactModalOpen(true)} />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="hidden dark:block absolute top-20 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-[100px] pointer-events-none animate-pulse" />
-        <div className="hidden dark:block absolute bottom-20 right-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-overlay opacity-50 dark:hidden" />
+      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Minimalist Background Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
         
         <div className="container mx-auto relative z-10">
-          <div className="max-w-5xl mx-auto text-center animate-fade-in-up">
-            <div className="inline-block mb-6 px-4 py-2 md:px-6 rounded-full bg-gradient-glass backdrop-blur-md border border-primary/20 shadow-lg dark:bg-slate-900/50 dark:border-slate-800">
-              <span className="text-xs md:text-sm font-semibold bg-gradient-primary bg-clip-text text-transparent dark:text-slate-300 dark:bg-none">
-                🚀 Leading Web Development Agency
-              </span>
+          <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
+            <div className="inline-block mb-6 px-4 py-1.5 rounded-full bg-secondary text-secondary-foreground text-xs font-medium tracking-wide border border-border">
+              Digital Excellence & Innovation
             </div>
 
-            <h1 className="text-3xl sm:text-7xl lg:text-8xl font-extrabold text-foreground mb-6 md:mb-8 leading-tight dark:text-white">
-              Transform Your Vision Into
+            <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-foreground mb-6 md:mb-8 leading-[1.1]">
+              Crafting digital <br className="hidden md:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-primary">perfection.</span>
             </h1>
 
-            <div className="h-12 md:h-24 flex items-center justify-center mb-10">
-              <h2 className="text-2xl sm:text-6xl lg:text-7xl font-extrabold bg-gradient-primary bg-clip-text text-transparent drop-shadow-lg">
-                {typedText}
-                <span className="animate-pulse text-foreground dark:text-white">|</span>
-              </h2>
-            </div>
-
-            <p className="text-lg sm:text-2xl text-muted-foreground mb-10 md:mb-12 max-w-3xl mx-auto leading-relaxed dark:text-slate-400">
-              We craft stunning, high-performance websites that drive results. From concept to launch, 
-              we're your partner in digital excellence.
+            <p className="text-lg md:text-xl text-muted-foreground mb-10 md:mb-12 max-w-2xl mx-auto leading-relaxed">
+              We engineer high-performance websites and digital products that 
+              position your brand at the forefront of the industry.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 md:gap-5 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
                 size="lg"
-                variant="gradient"
-                className="w-full sm:w-auto dark:bg-purple-600 dark:text-white dark:hover:bg-purple-700 dark:shadow-purple-500/25"
+                className="w-full sm:w-auto rounded-full px-8 h-12 text-base font-medium shadow-md hover:shadow-lg transition-all"
                 onClick={() => setContactModalOpen(true)}
               >
                 Start Your Project
-                <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button
                 size="lg"
-                variant="glass"
+                variant="outline"
                 asChild
-                className="w-full sm:w-auto dark:border-slate-700 dark:text-white dark:hover:bg-slate-800"
+                className="w-full sm:w-auto rounded-full px-8 h-12 text-base font-medium border-border/80 hover:bg-secondary/60 transition-all font-sans"
               >
                 <Link to="/projects">View Our Work</Link>
               </Button>
@@ -117,36 +97,37 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-background relative dark:bg-slate-900/50">
+      <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden">
         <div className="container mx-auto">
-          <div className="text-center mb-16 md:mb-20">
-            <div className="inline-block mb-4 px-5 py-1.5 rounded-full bg-primary/10 border border-primary/20 dark:bg-slate-800 dark:border-slate-700">
-              <span className="text-xs md:text-sm font-semibold text-primary dark:text-purple-400">✨ Why Choose Us</span>
-            </div>
-            <h2 className="text-3xl md:text-6xl font-extrabold text-foreground mb-6 dark:text-white">Why Choose Metryx?</h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed dark:text-slate-400">
-              We combine cutting-edge technology with creative excellence to deliver exceptional results.
+          <div className="text-center md:text-left mb-16 max-w-2xl mx-auto md:mx-0">
+            <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-2">Why Us?</h2>
+            <h3 className="text-3xl md:text-5xl font-bold text-foreground mb-4 leading-tight">Elevate your standards.</h3>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              We focus on architectural precision and aesthetic refinement, delivering platforms that endure over time.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-min max-w-6xl mx-auto">
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="group relative overflow-hidden bg-gradient-card hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-border/50 dark:bg-slate-950 dark:border-slate-800"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className={cn(
+                  "group relative overflow-hidden bg-card box-border shadow-sm hover:shadow-md transition-shadow duration-300 border border-border/60 hover:border-primary/30",
+                  feature.className
+                )}
               >
-                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity duration-500 dark:bg-gradient-to-br dark:from-purple-600/10 dark:to-blue-600/10 dark:group-hover:opacity-100" />
-                <CardHeader className="relative p-6 md:p-8">
-                  <div className="mb-6 p-4 rounded-2xl bg-primary/10 w-fit group-hover:scale-110 transition-all duration-300 dark:bg-slate-900">
-                    {feature.icon}
+                <CardHeader className="relative p-8 h-full flex flex-col justify-between">
+                  <div>
+                    <div className="mb-6 h-10 w-10 flex items-center justify-center rounded-lg bg-secondary border border-border/50 group-hover:scale-105 transition-transform duration-300">
+                      {feature.icon}
+                    </div>
+                    <CardTitle className="text-xl mb-3 font-semibold text-foreground tracking-tight">
+                      {feature.title}
+                    </CardTitle>
+                    <CardDescription className="text-base leading-relaxed text-muted-foreground">
+                      {feature.description}
+                    </CardDescription>
                   </div>
-                  <CardTitle className="text-xl md:text-2xl mb-3 font-bold dark:text-white">
-                    {feature.title}
-                  </CardTitle>
-                  <CardDescription className="text-sm md:text-base leading-relaxed dark:text-slate-400">
-                    {feature.description}
-                  </CardDescription>
                 </CardHeader>
               </Card>
             ))}
@@ -155,23 +136,24 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-overlay overflow-hidden dark:bg-slate-950 dark:bg-none">
-        <div className="container mx-auto relative z-10">
-          <div className="max-w-4xl mx-auto text-center bg-gradient-card backdrop-blur-sm rounded-3xl p-8 md:p-16 shadow-xl border border-border/50 dark:bg-slate-900 dark:border-slate-800">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-foreground mb-6 leading-tight dark:text-white">
-              Ready to Build Something Amazing?
+      <section className="relative py-24 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden z-10 border-t border-border/30">
+        {/* Subtle grid pattern background */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:32px_32px]" />
+        
+        <div className="container mx-auto relative cursor-default">
+          <div className="max-w-3xl mx-auto text-center rounded-[2rem] p-8 md:p-16 border border-border shadow-sm bg-gradient-to-b from-card/80 to-background/90 backdrop-blur-3xl">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-6 leading-tight">
+              Ready to redefine your digital presence?
             </h2>
-            <p className="text-lg md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed dark:text-slate-400">
-              Let's discuss your project and turn your ideas into reality. Get a free consultation today.
+            <p className="text-lg md:text-xl text-muted-foreground mb-10 mx-auto leading-relaxed">
+              Connect with us today and let's craft exceptional solutions together.
             </p>
             <Button
               size="lg"
-              variant="gradient"
-              className="w-full sm:w-auto dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
+              className="w-full sm:w-auto rounded-full px-10 h-14 text-base font-semibold shadow-md hover:shadow-lg transition-all"
               onClick={() => setContactModalOpen(true)}
             >
               Get Started Now
-              <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </div>
         </div>

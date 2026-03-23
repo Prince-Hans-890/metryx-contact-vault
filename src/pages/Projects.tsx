@@ -97,15 +97,28 @@ const Projects = () => {
     "Secure checkout with certificate of authenticity for each piece",
   ],
 },
+{
+  title: "Lasha Labels",
+  description: "A refined online presence built for Lasha Labels, a contemporary women's fashion brand — designed to reflect elegance, style, and the modern woman's wardrobe.",
+  images: ["/la1.png", "/ll2.png", "/ll3.png", "/ll4.png","/ll6.png","/ll7.png","/ll8.png","/ll9.png", "/ll5.png"],
+  tags: ["E-Commerce", "React", "Node.js"],
+  bulletPoints: [
+    "Elegant women's fashion showcase with high-resolution zoom and detail views",
+    "Collection filtering by category, size, color, and occasion",
+    "Custom styling and personalization request system",
+    "Secure checkout with authenticity guarantee for every order",
+  ],
+},
   ];
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Header onGetInTouch={() => setContactModalOpen(true)} />
 
-      <section className="relative pt-32 md:pt-40 pb-12 md:pb-16 px-4 bg-gradient-hero">
-        <div className="container mx-auto text-center">
-          <h1 className="text-3xl md:text-6xl font-extrabold mb-4 tracking-tight text-foreground">
+      <section className="relative pt-32 md:pt-40 pb-12 md:pb-16 px-4 bg-background border-b border-border/30">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+        <div className="container mx-auto text-center relative z-10">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight text-foreground">
             Our Portfolio
           </h1>
           <p className="text-sm md:text-lg text-muted-foreground max-w-xl mx-auto px-4">

@@ -38,16 +38,16 @@ const About = () => {
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Header onGetInTouch={() => setContactModalOpen(true)} />
 
-      {/* Hero Section - Adjusted padding and font sizes for mobile */}
-      <section className="relative pt-32 pb-16 md:pt-40 md:pb-28 px-4 sm:px-6 lg:px-8 bg-gradient-hero overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-overlay opacity-50" />
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-16 md:pt-40 md:pb-28 px-4 sm:px-6 lg:px-8 bg-background overflow-hidden border-b border-border/30">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
         <div className="container mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
-            <div className="inline-block mb-4 md:mb-6 px-4 py-1.5 md:px-6 md:py-2 rounded-full bg-gradient-glass backdrop-blur-md border border-primary/20 shadow-lg">
-              <span className="text-xs md:text-sm font-semibold bg-gradient-primary bg-clip-text text-transparent">👥 Our Story</span>
+            <div className="inline-block mb-4 md:mb-6 px-4 py-1.5 md:px-6 md:py-2 rounded-full bg-secondary border border-border/30 text-secondary-foreground text-xs md:text-sm font-medium tracking-wide">
+              Our Story
             </div>
-            <h1 className="text-3xl sm:text-6xl lg:text-7xl font-extrabold text-foreground mb-6 md:mb-8 leading-tight">
-              About Metryx Technologies
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-6 md:mb-8 leading-[1.1]">
+              About Metryx
             </h1>
             <p className="text-lg sm:text-2xl text-muted-foreground leading-relaxed px-2">
               We're a team of passionate developers, designers, and strategists dedicated to transforming 
@@ -55,8 +55,6 @@ const About = () => {
             </p>
           </div>
         </div>
-        <div className="absolute top-20 right-10 w-40 h-40 md:w-80 md:h-80 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 left-10 w-32 h-32 md:w-72 md:h-72 bg-accent/10 rounded-full blur-3xl" />
       </section>
 
       {/* Stats Section - Fixed into a 2x2 Matrix */}
@@ -104,7 +102,7 @@ const About = () => {
             </div>
             <div className="space-y-6 md:space-y-8 text-base md:text-lg text-muted-foreground bg-gradient-card backdrop-blur-sm rounded-2xl md:rounded-3xl p-6 md:p-12 shadow-xl border border-border/50">
               <p className="leading-relaxed md:text-xl">
-                Founded in 2024, Metryx Technologies emerged from a simple belief: every business deserves 
+                Founded in 2025, Metryx Technologies emerged from a simple belief: every business deserves 
                 a powerful digital presence that drives real results. What started as a small team of three 
                 passionate developers has grown into a full-service web development agency serving clients 
                 across the globe.
