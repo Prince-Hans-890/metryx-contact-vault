@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -22,8 +25,6 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-          glow: "hsl(var(--primary-glow))",
-          dark: "hsl(var(--primary-dark))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -50,103 +51,50 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
       },
-      backgroundImage: {
-        'gradient-primary': 'var(--gradient-primary)',
-        'gradient-hero': 'var(--gradient-hero)',
-        'gradient-overlay': 'var(--gradient-overlay)',
-        'gradient-glass': 'var(--gradient-glass)',
-        'gradient-card': 'var(--gradient-card)',
-      },
-      boxShadow: {
-        'sm': 'var(--shadow-sm)',
-        'md': 'var(--shadow-md)',
-        'lg': 'var(--shadow-lg)',
-        'xl': 'var(--shadow-xl)',
-        'glow': 'var(--shadow-glow)',
-        'glow-accent': 'var(--shadow-glow-accent)',
-      },
-      backdropBlur: {
-        'xs': '2px',
-      },
-      transitionTimingFunction: {
-        'smooth': 'var(--transition-smooth)',
-        'bounce': 'var(--transition-bounce)',
-      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
-        "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+        "float": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
         },
-        "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
-        },
-        "fade-in": {
-          "0%": {
-            opacity: "0",
-          },
-          "100%": {
-            opacity: "1",
-          },
-        },
-        "fade-in-up": {
-          "0%": {
-            opacity: "0",
-            transform: "translateY(30px)",
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translateY(0)",
-          },
-        },
-        "slide-in-right": {
-          "0%": {
-            transform: "translateX(100%)",
-            opacity: "0",
-          },
-          "100%": {
-            transform: "translateX(0)",
-            opacity: "1",
-          },
-        },
-        "pulse-glow": {
+        "gradient-x": {
           "0%, 100%": {
-            boxShadow: "0 0 20px hsl(var(--primary) / 0.3)",
+            "background-size": "200% 200%",
+            "background-position": "left center"
           },
           "50%": {
-            boxShadow: "0 0 40px hsl(var(--primary) / 0.6)",
+            "background-size": "200% 200%",
+            "background-position": "right center"
           },
         },
-        "typing": {
-          "0%, 90%, 100%": {
-            width: "0",
-          },
-          "30%, 60%": {
-            width: "100%",
-          },
+        "spotlight": {
+          "0%": { opacity: "0", transform: "translate(-50%, -50%) scale(0.5)" },
+          "100%": { opacity: "1", transform: "translate(-50%, -50%) scale(1)" }
+        },
+        "aurora": {
+          from: { backgroundPosition: "50% 50%, 50% 50%" },
+          to: { backgroundPosition: "350% 50%, 350% 50%" }
+        },
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {
+        "float": "float 6s ease-in-out infinite",
+        "gradient-x": "gradient-x 15s ease infinite",
+        "spotlight": "spotlight 2s ease .75s 1 forwards",
+        "aurora": "aurora 60s linear infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fade-in 0.6s ease-out",
-        "fade-in-up": "fade-in-up 0.6s ease-out",
-        "slide-in-right": "slide-in-right 0.5s ease-out",
-        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
-        "typing": "typing 3.5s steps(40) infinite",
       },
     },
   },
