@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { ContactModal } from "@/components/ContactModal";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Timeline } from "@/components/ui/Timeline";
 import {
   Code,
   Smartphone,
@@ -62,44 +63,112 @@ const Services = () => {
     },
   ];
 
-  const processSteps = [
+const processSteps = [
     {
-      number: "01",
-      title: "Consultation",
-      description: "Initial meeting to discuss your vision, challenges, and business goals.",
-      icon: <Handshake className="w-8 h-8" />,
+      title: "01. Consultation",
+      content: (
+        <div className="bg-secondary/20 border border-white/5 rounded-3xl p-8 shadow-xl backdrop-blur-sm hover:border-primary/30 transition-colors">
+          <Handshake className="text-primary w-12 h-12 mb-6" />
+          <p className="text-muted-foreground md:text-xl font-medium leading-relaxed">
+            Initial discovery meeting to fundamentally discuss your vision, map out challenges, and align on crucial business goals.
+          </p>
+        </div>
+      )
     },
     {
-      number: "02",
-      title: "Discovery",
-      description: "In-depth research, requirements gathering, and strategic roadmap planning.",
-      icon: <Search className="w-8 h-8" />,
+      title: "02. Discovery",
+      content: (
+        <div className="bg-secondary/20 border border-white/5 rounded-3xl p-8 shadow-xl backdrop-blur-sm hover:border-primary/30 transition-colors">
+          <Search className="text-primary w-12 h-12 mb-6" />
+          <p className="text-muted-foreground md:text-xl font-medium leading-relaxed">
+            In-depth user research, rigorous requirements gathering, and strategic timeline and roadmap planning.
+          </p>
+        </div>
+      )
     },
     {
-      number: "03",
-      title: "Design",
-      description: "Creating intuitive user experiences and stunning visual prototypes.",
-      icon: <PenTool className="w-8 h-8" />,
+      title: "03. Design",
+      content: (
+        <div className="bg-secondary/20 border border-white/5 rounded-3xl p-8 shadow-xl backdrop-blur-sm hover:border-primary/30 transition-colors">
+          <PenTool className="text-primary w-12 h-12 mb-6" />
+          <p className="text-muted-foreground md:text-xl font-medium leading-relaxed">
+            Crafting intuitive user experiences and stunning, high-fidelity visual prototypes for your approval.
+          </p>
+        </div>
+      )
     },
     {
-      number: "04",
-      title: "Development",
-      description: "Building the solution with clean, scalable, and efficient code.",
-      icon: <Code2 className="w-8 h-8" />,
+      title: "04. Development",
+      content: (
+        <div className="bg-secondary/20 border border-white/5 rounded-3xl p-8 shadow-xl backdrop-blur-sm hover:border-primary/30 transition-colors">
+          <Code2 className="text-primary w-12 h-12 mb-6" />
+          <p className="text-muted-foreground md:text-xl font-medium leading-relaxed">
+            Building out the solution meticulously with clean, scalable, thoroughly documented, and efficient code.
+          </p>
+        </div>
+      )
     },
     {
-      number: "05",
-      title: "Launch",
-      description: "Thorough testing, final deployment, and celebrating your go-live moment.",
-      icon: <Rocket className="w-8 h-8" />,
+      title: "05. Launch",
+      content: (
+        <div className="bg-secondary/20 border border-white/5 rounded-3xl p-8 shadow-xl backdrop-blur-sm hover:border-primary/30 transition-colors">
+          <Rocket className="text-primary w-12 h-12 mb-6" />
+          <p className="text-muted-foreground md:text-xl font-medium leading-relaxed">
+            Detailed quality assurance, exhaustive cross-platform testing, final deployment, and celebrating your go-live.
+          </p>
+        </div>
+      )
     },
     {
-      number: "06",
-      title: "Optimization",
-      description: "Continuous monitoring, data-driven improvements, and scaling strategies.",
-      icon: <TrendingUp className="w-8 h-8" />,
+      title: "06. Optimization",
+      content: (
+        <div className="bg-secondary/20 border border-white/5 rounded-3xl p-8 shadow-xl backdrop-blur-sm hover:border-primary/30 transition-colors">
+          <TrendingUp className="text-primary w-12 h-12 mb-6" />
+          <p className="text-muted-foreground md:text-xl font-medium leading-relaxed">
+            Continuous uptime monitoring, actionable data-driven improvements, and rapid feature scaling strategies moving forward.
+          </p>
+        </div>
+      )
     },
   ];
+  // const processSteps = [
+  //   {
+  //     number: "01",
+  //     title: "Consultation",
+  //     description: "Initial meeting to discuss your vision, challenges, and business goals.",
+  //     icon: <Handshake className="w-8 h-8" />,
+  //   },
+  //   {
+  //     number: "02",
+  //     title: "Discovery",
+  //     description: "In-depth research, requirements gathering, and strategic roadmap planning.",
+  //     icon: <Search className="w-8 h-8" />,
+  //   },
+  //   {
+  //     number: "03",
+  //     title: "Design",
+  //     description: "Creating intuitive user experiences and stunning visual prototypes.",
+  //     icon: <PenTool className="w-8 h-8" />,
+  //   },
+  //   {
+  //     number: "04",
+  //     title: "Development",
+  //     description: "Building the solution with clean, scalable, and efficient code.",
+  //     icon: <Code2 className="w-8 h-8" />,
+  //   },
+  //   {
+  //     number: "05",
+  //     title: "Launch",
+  //     description: "Thorough testing, final deployment, and celebrating your go-live moment.",
+  //     icon: <Rocket className="w-8 h-8" />,
+  //   },
+  //   {
+  //     number: "06",
+  //     title: "Optimization",
+  //     description: "Continuous monitoring, data-driven improvements, and scaling strategies.",
+  //     icon: <TrendingUp className="w-8 h-8" />,
+  //   },
+  // ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -153,41 +222,9 @@ const Services = () => {
           </div>
         </div>
       </section>
-
-      {/* Process Section - Reduced padding to py-12 md:py-16 */}
-      <section className="relative py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-background overflow-hidden">
-        <div className="container mx-auto relative z-10">
-          <div className="text-center mb-8 md:mb-16">
-            <div className="inline-block mb-3 px-5 py-1.5 rounded-full bg-primary/10 border border-primary/20">
-              <span className="text-sm font-semibold text-primary">⚡ How We Work</span>
-            </div>
-            <h2 className="text-3xl md:text-6xl font-extrabold mb-4 tracking-tight text-foreground">
-              Our <span className="text-transparent bg-clip-text bg-gradient-primary">Process</span>
-            </h2>
-          </div>
-
-          <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 max-w-7xl mx-auto">
-            {processSteps.map((step, index) => (
-              <div
-                key={index}
-                className="group relative bg-card backdrop-blur-xl border border-border/50 rounded-3xl p-5 md:p-8 hover:border-primary/50 transition-all duration-500 hover:-translate-y-1"
-              >
-                <div className="relative z-10">
-                  <div className="flex items-start justify-between mb-4 md:mb-6">
-                    <div className="p-2 md:p-3 rounded-2xl bg-primary/10 text-primary transition-all duration-300">
-                      {step.icon}
-                    </div>
-                    <span className="text-3xl md:text-5xl font-extrabold text-foreground/5">
-                      {step.number}
-                    </span>
-                  </div>
-                  <h3 className="text-lg md:text-2xl font-bold text-foreground mb-2 md:mb-3">{step.title}</h3>
-                  <p className="text-xs md:text-base text-muted-foreground leading-relaxed">{step.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+      {/* Process Section with the Timeline Component */}
+      <section className="relative z-10">
+        <Timeline data={processSteps} />
       </section>
 
       {/* CTA Section - Reduced padding to py-8 md:py-16 and p-6 md:p-16 */}

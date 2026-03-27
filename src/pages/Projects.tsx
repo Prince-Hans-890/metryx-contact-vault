@@ -27,7 +27,7 @@ const Projects = () => {
     {
       title: "E-commerce Shoe Store",
       description: "A high-performance digital storefront optimized for the footwear industry, focusing on conversion-driven UX.",
-      images: ["/shoes2.png", "/s1.jpeg", "/s2.jpeg","/shoe.jpeg","/s11.jpeg","/ss.png"],
+      images: ["/shoes2.png", "/s1.jpeg", "/s2.jpeg", "/shoe.jpeg", "/s11.jpeg", "/ss.png"],
       tags: ["E-commerce", "React", "Node.js"],
       bulletPoints: [
         "Advanced filtering by size and color",
@@ -39,7 +39,7 @@ const Projects = () => {
     {
       title: "Real Estate Website",
       description: "A luxury property ecosystem featuring real-time MLS integration and immersive visual tours.",
-      images: ["/rs1.jpg", "/rs2.jpg", "/rs3.jpg", "/rs5.jpeg","/rs10.jpeg"],
+      images: ["/rs1.jpg", "/rs2.jpg", "/rs3.jpg", "/rs5.jpeg", "/rs10.jpeg"],
       tags: ["Real Estate", "TypeScript", "Maps API"],
       bulletPoints: [
         "Interactive 4K virtual property tours",
@@ -48,11 +48,11 @@ const Projects = () => {
         "Secure client document portal"
       ],
     },
-    
+
     {
       title: "Restaurant Website",
       description: "A full-stack culinary platform managing seasonal digital menus and automated kitchen lead times.",
-      images: ["/rest.png", "/rest2.png", "/rest%203.png", "/rest4.png","/rest5.png"],
+      images: ["/rest.png", "/rest2.png", "/rest%203.png", "/rest4.png", "/rest5.png"],
       tags: ["Restaurant", "React", "Firebase"],
       bulletPoints: [
         "Live table reservation with POS sync",
@@ -64,51 +64,51 @@ const Projects = () => {
     {
       title: "RISA Bridal Store",
       description: " A luxury digital storefront crafted for RISA, a premier bridal brand — designed to evoke elegance and drive seamless discovery of bridal collections.",
-      images: ["/r1.png", "/r2.png", "/r3.png", "/r4.png","/r5.png"],
+      images: ["/r1.png", "/r2.png", "/r3.png", "/r4.png", "/r5.png"],
       tags: ["E-Commerce", "Node.js", "React"],
       bulletPoints: [
         "Elegant bridal collection showcase with lookbook-style gallery",
-    "Advanced filtering by style, size, and fabric",
-    "Appointment booking system for in-store consultations",
-    "Seamless mobile-first experience for on-the-go browsing",
+        "Advanced filtering by style, size, and fabric",
+        "Appointment booking system for in-store consultations",
+        "Seamless mobile-first experience for on-the-go browsing",
       ],
     },
     {
-  title: "Movable Stuff",
-  description: "A modern e-commerce platform built for Movable Stuff, a contemporary furniture brand — designed to inspire home styling and simplify the journey from discovery to delivery.",
-  images: ["/ms1.png", "/ms2.png", "/ms3.png", "/ms4.png", "/ms5.png"],
-  tags: ["E-Commerce", "Node.js", "React"],
-  bulletPoints: [
-    "Curated furniture showcase with room-scene style photography",
-    "Advanced filtering by category, material, and price range",
-    "Interactive room visualizer for previewing furniture in your space",
-    "Seamless cart and checkout with delivery scheduling built-in",
-  ],
-},
-{
-  title: "Malik Jewellers",
-  description: "A sophisticated online presence built for Malik Jewellers, a heritage jewellery brand — designed to reflect craftsmanship, trust, and the timeless allure of fine jewellery.",
-  images: ["/mj1.png", "/mj2.png", "/mj3.png", "/mj4.png", "/mj5.png"],
-  tags: ["E-Commerce", "React", "Node.js"],
-  bulletPoints: [
-    "Elegant jewellery showcase with high-resolution zoom and detail views",
-    "Collection filtering by metal type, gemstone, and occasion",
-    "Custom engraving and personalization request system",
-    "Secure checkout with certificate of authenticity for each piece",
-  ],
-},
-{
-  title: "Lasha Labels",
-  description: "A refined online presence built for Lasha Labels, a contemporary women's fashion brand — designed to reflect elegance, style, and the modern woman's wardrobe.",
-  images: ["/la1.png", "/ll2.png", "/ll3.png", "/ll4.png","/ll6.png","/ll7.png","/ll8.png","/ll9.png", "/ll5.png"],
-  tags: ["E-Commerce", "React", "Node.js"],
-  bulletPoints: [
-    "Elegant women's fashion showcase with high-resolution zoom and detail views",
-    "Collection filtering by category, size, color, and occasion",
-    "Custom styling and personalization request system",
-    "Secure checkout with authenticity guarantee for every order",
-  ],
-},
+      title: "Movable Stuff",
+      description: "A modern e-commerce platform built for Movable Stuff, a contemporary furniture brand — designed to inspire home styling and simplify the journey from discovery to delivery.",
+      images: ["/ms1.png", "/ms2.png", "/ms3.png", "/ms4.png", "/ms5.png"],
+      tags: ["E-Commerce", "Node.js", "React"],
+      bulletPoints: [
+        "Curated furniture showcase with room-scene style photography",
+        "Advanced filtering by category, material, and price range",
+        "Interactive room visualizer for previewing furniture in your space",
+        "Seamless cart and checkout with delivery scheduling built-in",
+      ],
+    },
+    // {
+    //   title: "Malik Jewellers",
+    //   description: "A sophisticated online presence built for Malik Jewellers, a heritage jewellery brand — designed to reflect craftsmanship, trust, and the timeless allure of fine jewellery.",
+    //   images: ["/mj1.png", "/mj2.png", "/mj3.png", "/mj4.png", "/mj5.png"],
+    //   tags: ["E-Commerce", "React", "Node.js"],
+    //   bulletPoints: [
+    //     "Elegant jewellery showcase with high-resolution zoom and detail views",
+    //     "Collection filtering by metal type, gemstone, and occasion",
+    //     "Custom engraving and personalization request system",
+    //     "Secure checkout with certificate of authenticity for each piece",
+    //   ],
+    // },
+    {
+      title: "Lasha Labels",
+      description: "A refined online presence built for Lasha Labels, a contemporary women's fashion brand — designed to reflect elegance, style, and the modern woman's wardrobe.",
+      images: ["/la1.png", "/ll2.png", "/ll3.png", "/ll4.png", "/ll6.png", "/ll7.png", "/ll8.png", "/ll9.png", "/ll5.png"],
+      tags: ["E-Commerce", "React", "Node.js"],
+      bulletPoints: [
+        "Elegant women's fashion showcase with high-resolution zoom and detail views",
+        "Collection filtering by category, size, color, and occasion",
+        "Custom styling and personalization request system",
+        "Secure checkout with authenticity guarantee for every order",
+      ],
+    },
   ];
 
   return (
@@ -134,10 +134,10 @@ const Projects = () => {
               <div
                 key={index}
                 // Line 89 - REPLACE WITH THIS
-className={cn(
-  "flex flex-col gap-8 lg:gap-24 items-center",
-  index % 2 !== 0 ? "lg:flex-row-reverse" : "lg:flex-row"
-)}
+                className={cn(
+                  "flex flex-col gap-8 lg:gap-24 items-center",
+                  index % 2 !== 0 ? "lg:flex-row-reverse" : "lg:flex-row"
+                )}
               >
                 {/* Image Section */}
                 <div className="w-full lg:w-1/2 relative group">
@@ -155,9 +155,9 @@ className={cn(
                               <CarouselItem key={i}>
                                 <Card className="overflow-hidden border-none shadow-lg rounded-xl md:rounded-2xl bg-muted/30 relative group/img">
                                   <div className="aspect-auto sm:aspect-video relative w-full min-h-[250px] md:min-h-[350px] flex items-center justify-center p-2">
-                                    <img 
-                                      src={img} 
-                                      alt={project.title} 
+                                    <img
+                                      src={img}
+                                      alt={project.title}
                                       className="w-full h-full object-contain block"
                                     />
                                     <div className="absolute inset-0 bg-black/10 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
@@ -178,9 +178,9 @@ className={cn(
                         <CarouselContent className="items-center">
                           {project.images.map((img, i) => (
                             <CarouselItem key={i} className="flex justify-center items-center">
-                              <img 
-                                src={img} 
-                                alt="Full view" 
+                              <img
+                                src={img}
+                                alt="Full view"
                                 className="max-w-full max-h-[85vh] object-contain rounded-lg"
                               />
                             </CarouselItem>
